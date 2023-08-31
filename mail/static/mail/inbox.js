@@ -44,6 +44,7 @@ function load_mailbox(mailbox) {
       console.log(onlyEmail);
       
       const new_email = document.createElement('div');
+      new_email.className = "list-group-item";
       new_email.innerHTML = `
       <h6>Sender: ${onlyEmail.sender}</h6>
       <h5>Subject: ${onlyEmail.subject}</h5>
