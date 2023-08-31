@@ -50,6 +50,8 @@ function load_mailbox(mailbox) {
       <h5>Subject: ${onlyEmail.subject}</h5>
       <p>Timestamp: ${onlyEmail.timestamp}</p>
       `;
+
+      new_email.className = onlyEmail.read ? 'read': 'unread';
       new_email.addEventListener('click', function() {
           console.log('This element has been clicked!')
       });
