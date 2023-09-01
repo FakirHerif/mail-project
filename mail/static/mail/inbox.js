@@ -82,6 +82,11 @@ function email_view(id) {
       compose_email();
 
       document.querySelector('#compose-recipients').value = email.sender;
+      let subject = email.subject;
+      if(subject.split(' ',1)[0] != "Re:"){
+        subject = "Re: " + email.subject;
+      }
+      document.querySelector('#compose-subject').value = email.subject;
       document.querySelector('#compose-body').value = `On ${email.timestamp} - Sender: ${email.sender} - Msg: ${email.body}`;
 
     });
