@@ -82,7 +82,7 @@ function email_view(id) {
       compose_email();
 
       document.querySelector('#compose-recipients').value = email.sender;
-
+      document.querySelector('#compose-body').value = `On ${email.timestamp} - Sender: ${email.sender} - Msg: ${email.body}`;
 
     });
     document.querySelector('#emails-details-view').append(buttonReply);
