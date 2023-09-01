@@ -25,6 +25,13 @@ function compose_email() {
   document.querySelector('#compose-body').value = '';
 }
 
+
+
+function email_view(id) {
+  console.log(id);
+}
+
+
 function load_mailbox(mailbox) {
   
   // Show the mailbox and hide other views
@@ -53,7 +60,7 @@ function load_mailbox(mailbox) {
 
       new_email.className = onlyEmail.read ? 'read': 'unread';
       new_email.addEventListener('click', function() {
-          console.log('This element has been clicked!')
+        email_view(onlyEmail.id)
       });
       document.querySelector('#emails-view').append(new_email);
 
