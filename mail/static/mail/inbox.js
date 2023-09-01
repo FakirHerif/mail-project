@@ -59,6 +59,16 @@ function email_view(id) {
       
     }
 
+
+    const buttonArchive = document.createElement('button');
+    buttonArchive.innerHTML = email.archived ? "Unarchive" : "Archive"
+    buttonArchive.className = email.archived ? "btn btn-success" : "btn btn-danger"
+    buttonArchive.addEventListener('click', function() {
+        console.log('This element has been clicked!')
+    });
+    document.querySelector('#emails-details-view').append(buttonArchive);
+
+
     // ... do something else with email ...
 });
 
