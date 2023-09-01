@@ -64,7 +64,13 @@ function email_view(id) {
     buttonArchive.innerHTML = email.archived ? "Unarchive" : "Archive"
     buttonArchive.className = email.archived ? "btn btn-success" : "btn btn-danger"
     buttonArchive.addEventListener('click', function() {
-        console.log('This element has been clicked!')
+      fetch(`/emails/${email.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            archived: !email.archived
+        })
+      })
+      .then(() => { load_mailbox('archive') } )
     });
     document.querySelector('#emails-details-view').append(buttonArchive);
 
