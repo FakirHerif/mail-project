@@ -49,6 +49,16 @@ function email_view(id) {
     </ul>
     `
 
+    if(!email.read) {
+      fetch(`/emails/${email.id}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            read: true
+        })
+      })
+      
+    }
+
     // ... do something else with email ...
 });
 
