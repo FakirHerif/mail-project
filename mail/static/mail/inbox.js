@@ -79,7 +79,7 @@ function email_view(id) {
     buttonReply.innerHTML = "Reply"
     buttonReply.className = "btn btn-info";
     buttonReply.addEventListener('click', function() {
-      console.log("Reply")
+      compose_email();
     });
     document.querySelector('#emails-details-view').append(buttonReply);
 
