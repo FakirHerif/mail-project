@@ -75,6 +75,14 @@ function email_view(id) {
     document.querySelector('#emails-details-view').append(buttonArchive);
 
 
+    const buttonReply = document.createElement('button');
+    buttonReply.innerHTML = "Reply"
+    buttonReply.className = "btn btn-info";
+    buttonReply.addEventListener('click', function() {
+      console.log("Reply")
+    });
+    document.querySelector('#emails-details-view').append(buttonReply);
+
     // ... do something else with email ...
 });
 
