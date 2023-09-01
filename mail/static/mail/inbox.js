@@ -62,7 +62,7 @@ function email_view(id) {
 
     const buttonArchive = document.createElement('button');
     buttonArchive.innerHTML = email.archived ? "Unarchive" : "Archive"
-    buttonArchive.className = email.archived ? "btn btn-success" : "btn btn-danger"
+    buttonArchive.className = email.archived ? "btn btn-success btn-spacing" : "btn btn-danger btn-spacing"
     buttonArchive.addEventListener('click', function() {
       fetch(`/emails/${email.id}`, {
         method: 'PUT',
@@ -77,7 +77,7 @@ function email_view(id) {
 
     const buttonReply = document.createElement('button');
     buttonReply.innerHTML = "Reply"
-    buttonReply.className = "btn btn-info";
+    buttonReply.className = "btn btn-info btn-spacing";
     buttonReply.addEventListener('click', function() {
       compose_email();
 
@@ -86,7 +86,7 @@ function email_view(id) {
       if(subject.split(' ',1)[0] != "Re:"){
         subject = "Re: " + email.subject;
       }
-      document.querySelector('#compose-subject').value = email.subject;
+      document.querySelector('#compose-subject').value = subject;
       document.querySelector('#compose-body').value = `On ${email.timestamp} - Sender: ${email.sender} - Msg: ${email.body}`;
 
     });

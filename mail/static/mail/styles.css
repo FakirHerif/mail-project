@@ -10,3 +10,7 @@ textarea {
 .unread {
     background-color: white;
 }
+
+.btn-spacing {
+    margin-right: 20px;
+}
