@@ -40,7 +40,13 @@ function email_view(id) {
     document.querySelector('#emails-details-view').style.display = 'block';
 
     document.querySelector('#emails-details-view').innerHTML = `
-    Hello
+    <ul class="list-group">
+    <li class="list-group-item"><strong>From: </strong>${email.sender}</li>
+    <li class="list-group-item"><strong>To: </strong>${email.recipients}</li>
+    <li class="list-group-item"><strong>Subject: </strong>${email.subject}</li>
+    <li class="list-group-item"><strong>Msg: </strong>${email.body}</li>
+    <li class="list-group-item"><strong>Timestamp: </strong>${email.timestamp}</li>
+    </ul>
     `
 
     // ... do something else with email ...
