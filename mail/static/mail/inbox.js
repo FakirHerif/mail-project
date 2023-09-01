@@ -80,6 +80,10 @@ function email_view(id) {
     buttonReply.className = "btn btn-info";
     buttonReply.addEventListener('click', function() {
       compose_email();
+
+      document.querySelector('#compose-recipients').value = email.sender;
+
+
     });
     document.querySelector('#emails-details-view').append(buttonReply);
 
